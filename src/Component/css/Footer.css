@@ -1,0 +1,100 @@
+.footer {
+  background-color: #1f2937; /* dark background */
+  color: #f9fafb;
+  padding: 40px 20px 20px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Logo / About */
+.footer-logo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #fbbf24; /* yellow highlight */
+}
+
+.footer-logo p {
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+/* Quick Links */
+.footer-links h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #f9fafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #6366f1; /* hover purple */
+}
+
+/* Social Icons */
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #f9fafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fbbf24; /* yellow hover */
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #374151;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-links ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}

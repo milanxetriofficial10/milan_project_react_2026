@@ -1,0 +1,436 @@
+/* General Reset */
+.home {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background-color: #bdd9f5;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 92vh;
+  background-image: url("public/1762777798612.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Soft black overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* adjust darkness here */
+  z-index: 1;
+}
+
+/* Make hero content float above the darkness */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #fbbf24; /* yellow highlight for name */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+
+.hero-buttons .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #fbbf24; /* yellow */
+  color: #1f2937;
+}
+
+.primary-btn:hover {
+  background-color: #f59e0b;
+}
+
+.secondary-btn {
+  background-color: #f51c0c;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background-color: #aa0202;
+  color: #4f46e5;
+}
+
+/* About Section */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Projects Section */
+.projects {
+  padding: 60px 20px;
+  background-color: #ff7057;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.project-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .project-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+
+/* ---------------------- SKILLS ---------------------- */
+.skills {
+  padding: 70px 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #0d1117;
+}
+
+.skills h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: hsl(177, 100%, 50%);
+}
+
+/* Skill Area Layout */
+.skill-chart-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* ---------- Skill Bars (Left Side) ---------- */
+.skill-bars {
+  width: 450px;
+}
+
+.skill {
+  margin-bottom: 30px;
+}
+
+.skill p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: azure;
+}
+
+.bar {
+  height: 11px;
+  width: 100%;
+  background: #222;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f00505, #3efc05);
+  border-radius: 6px;
+  animation: loadSkill 2s ease forwards;
+  width: 0;
+}
+
+.react { width: 90%; }
+.html { width: 95%; }
+.js { width: 85%; }
+.php { width: 75%; }
+
+@keyframes loadSkill {
+  from { width: 0; }
+  to { width: var(--skill-width); }
+}
+
+/* ---------- Circular Chart (Right Side) ---------- */
+.circle-chart {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.outer {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px solid #333;
+  border-top-color: #00eaff;
+  border-right-color: #005eff;
+  animation: rotateChart 4s linear infinite;
+}
+
+@keyframes rotateChart {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.inner {
+  width: 150px;
+  height: 150px;
+  background: #f70303;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.inner h3 {
+  font-size: 18px;
+  color: #ebecec;
+  line-height: 22px;
+}
+
+
+/* --------------------------- */
+/* LOGIN POPUP */
+/* --------------------------- */
+
+.login-open-btn {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  padding: 10px 22px;
+  background: #4c6ef5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.login-open-btn:hover {
+  background: #3b5bdb;
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-box {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: slideDown 0.6s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #ff6b6b;
+}
+
+/* Heading */
+.popup-box h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.login-form input::placeholder {
+  color: #ddd;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #4c6ef5, #6a79ff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #3d5ce2, #5a67ff);
+  transform: translateY(-2px);
+}
+
+/* Signup/Login Switch */
+.switch-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.switch-text span {
+  color: #6fa8ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.switch-text span:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------- */
+/* ANIMATIONS */
+/* --------------------------- */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-40px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
